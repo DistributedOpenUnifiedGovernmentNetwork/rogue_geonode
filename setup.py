@@ -45,7 +45,7 @@ for dirpath, dirnames, filenames in os.walk(walk_dir):
         data_files.append([dirpath, [os.path.join(dirpath, f) for f in filenames]])
 
 install_requires = [
-        "geoshape-geonode==1.0",
+        "geoshape-geonode==1.1.dev20150116170751",
         "django-classification-banner>=0.1.4",
         "django-maploom==1.1.1",
         "psycopg2==2.4.5"
@@ -62,11 +62,11 @@ docs_requires = [
 
 setup(
     name="geoshape",
-    version="1.1.3",
+    version=__import__('geoshape').get_version(),
     author="LMN Solutions",
     author_email="rogue@lmnsolutions.com",
     description="geoshape, based on GeoNode",
-    long_description=(read('README.rst')),
+    long_description=(read('README.md')),
     classifiers=[
         'Development Status :: 5 - Production/Stable',
     ],

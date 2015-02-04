@@ -165,7 +165,7 @@ def sync(options):
     """
     Run the syncdb and migrate management commands to create and migrate a DB
     """
-    sh("python manage.py syncdb --all --noinput")
+    sh("python manage.py syncdb --noinput")
     #sh("python manage.py migrate --noinput")
     sh("python manage.py loaddata sample_admin.json")
 
@@ -227,7 +227,7 @@ def package(options):
             tar.add(file)
 
         # Add the README with the license and important links to documentation.
-        tar.add('README', arcname=('%s/README.rst' % out_pkg))
+        tar.add('README', arcname=('%s/README.md' % out_pkg))
         tar.close()
 
         # Remove all the files in the temporary output package directory.
